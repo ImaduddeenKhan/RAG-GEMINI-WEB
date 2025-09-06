@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG Q&A with Gemini</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo">🤖</span>
+      <h1>RAG Q&A with Gemini</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Upload a document</h2>
+      <p class="muted">Supported: PDF, DOCX, TXT</p>
+
+      <div id="dropzone" class="dropzone">
+        <input id="fileInput" type="file" accept=".pdf,.docx,.txt" />
+        <p>Drag & drop file here or click to select</p>
+      </div>
+
+      <button id="uploadBtn" class="btn">Upload & Build Index</button>
+      <div id="uploadStatus" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>2) Ask a question</h2>
+      <div class="row">
+        <input id="questionInput" type="text" placeholder="Ask anything about your file..." />
+        <button id="askBtn" class="btn">Get Answer</button>
+      </div>
+      <div id="loading" class="loading hidden">Fetching answer...</div>
+      <div id="answer" class="answer"></div>
+      <div id="sources" class="sources"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Built with FastAPI + LangChain + Gemini</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
